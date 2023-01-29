@@ -1,5 +1,3 @@
 deployment_packages
 *__pycache__*
-*.pyc
-
 *.example.json

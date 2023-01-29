@@ -1,7 +1,6 @@
 import json
 import asyncio
-from sqs_record_handler import handle_incoming_queue_messages
-
+from handle_queue_messages import handle_incoming_queue_messages
 def lambda_handler(event, context):
     if not('Records' in event) or len(event['Records']) == 0:
         return {
@@ -12,6 +11,7 @@ def lambda_handler(event, context):
     print(result)
     if not(result):
         raise Exception("Failed to process some items")
+    
     return {
         'statusCode': 200,
         'body': json.dumps('OK')

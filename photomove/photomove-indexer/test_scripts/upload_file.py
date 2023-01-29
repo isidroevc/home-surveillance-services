@@ -11,7 +11,7 @@ day_date = now.strftime('%Y_%m_%d')
 file_name = str(int(now.timestamp())) + '.jpg'
 key  = device_id + '/' + day_date + '/' + file_name
 print("Key: " + key)
-with open("./test.jpg", "rb") as f:
+with open("./tophotochop.jpg", "rb") as f:
     response = s3.upload_fileobj(
         f,
         os.environ['PHOTOMOVE_BUCKET'],
